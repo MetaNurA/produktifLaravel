@@ -25,7 +25,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{ asset('frontend/assets/css/main.css') }}" rel="stylesheet">
+
 
   <!-- =======================================================
   * Template Name: Butterfly
@@ -37,6 +38,10 @@
 </head>
 
 <body class="index-page">
+  @include('frontend.layouts.navbar')
+
+  @yield('content')
+  
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -958,7 +963,8 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+
 
 </body>
 

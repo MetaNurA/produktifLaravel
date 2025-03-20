@@ -86,6 +86,9 @@ Route::delete('user/{id}', [ManagementUserController::class, 'destroy']);
 
 //Acara 6
 Route::get('/home', [ManagementUserController::class, 'index']);
+Route::get("/home", function(){
+    return view("home");
+});
 
 //Acara 7
 Route::resource('/homeacara7', HomeController::class);
@@ -95,3 +98,20 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::resource('dashboard', DashboardController::class);
     Route::resource('product', ProductController::class);
 });
+
+
+Route::get('/user','ManagementUserController@index');
+Route::resource('/user','ManagementUserConttroller');
+
+Route::group(['namespace'=>'frontend'], function()
+    {
+        Route::resource('home','HomeController');
+    });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
